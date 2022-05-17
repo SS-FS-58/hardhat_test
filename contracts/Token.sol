@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: LGPL-3.0-only
 pragma solidity >=0.8.0 <0.9.0;
 
-/**
- * @title Token - a simple example (non - ERC-20 compliant) token contract.
- */
+import "hardhat/console.sol";
+
 contract Token {
     address private owner;
 
@@ -27,6 +26,9 @@ contract Token {
      * @param _to address receiver.
      */
     function transfer(uint256 _amount, address _to) external {
+        console.log("Sender balance is %s tokens", balances[msg.sender]);
+        console.log("Trying to send %s tokens to %s", _amount, _to);
+
         require(balances[msg.sender] >= _amount, "Not enough funds");
         balances[msg.sender] -= _amount;
         balances[_to] += _amount;
