@@ -20,6 +20,8 @@
     "web3": "^1.7.3"
   },
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "@openzeppelin/contracts": "^4.6.0",
+    "dotenv": "^16.0.0",
+    "base64-sol": "1.1.0"
   }
 }
